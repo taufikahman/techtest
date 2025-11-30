@@ -38,27 +38,16 @@ appium
 ### 2. Start Android Emulator
 ```bash
 # Start your AVD
-emulator -avd Pixel_3a_API_34_x86_64
+emulator -sdk_gphone64_arm64
 ```
 
 ### 3. Run All Tests
-```bash
-mvn test
-```
-
-### 4. Run Specific Feature
-```bash
-# Run only login tests
-mvn test -Dcucumber.filter.tags="@login"
-
-# Run only product details tests
-mvn test -Dcucumber.filter.tags="@products"
-```
+Right click on files and choose run
 
 ## Configuration
 
 ### Device Configuration
-Update device settings in `BaseDriver.java`:
+Update device settings on stepdefinitions`:
 ```java
 capabilities.setCapability("deviceName", "YOUR_DEVICE_NAME");
 capabilities.setCapability("platformName", "Android");
@@ -75,7 +64,7 @@ capabilities.setCapability("appActivity", "com.saucelabs.mydemoapp.android.view.
 ## Reports
 
 Test reports are generated in:
-- **HTML Report**: `target/cucumber-reports/cucumber-html-report.html`
+- **HTML Report**: `target/test-classes/cucumber-html-report.html`
 - **Console Output**: Detailed step execution logs
 
 ## Dependencies
